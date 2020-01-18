@@ -5,7 +5,9 @@ import java.io.PrintStream;
 
 import org.junit.Test;
 
+import com.main.fish.Clownfish;
 import com.main.fish.Fish;
+import com.main.fish.Shark;
 
 public class TestFish {
 	// QB.1
@@ -31,4 +33,45 @@ public class TestFish {
 		Fish fish = new Fish();
 		fish.walk();
 	}
+
+	// QB.2
+	@Test
+	public void testShark() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Shark shark = new Shark();
+		shark.getHabit();
+		assertEquals("I like to eat other fish", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		shark.getColor();
+		assertEquals("My color is grey", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		shark.getSize();
+		assertEquals("I am so big", outContent.toString());
+	}
+
+	// QB.2
+	@Test
+	public void testClownfish() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Clownfish clownfish = new Clownfish();
+		clownfish.getHabit();
+		assertEquals("I like to make jokes", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		clownfish.getColor();
+		assertEquals("My color is orange", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		clownfish.getSize();
+		assertEquals("I am so small", outContent.toString());
+	}
+		
 }
