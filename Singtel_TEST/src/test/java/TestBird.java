@@ -66,4 +66,28 @@ public class TestBird {
 		Chicken chicken = new Chicken();
 		chicken.fly();
 	}
+
+	// QA.3
+	@Test
+	public void testRooster() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Chicken rooster = new Chicken() {
+			/*
+			 * 
+			 * QA.3.a => override existing chicken's sing() 
+			 * 
+			 * QA.3.b => rooster is male chiken
+			 * 
+			 * QA.3.c => model a rooster without using inheritance by modifying
+			 * existing function while same object creation
+			 */
+			@Override
+			public void sing() {
+				System.out.print("Cock-a-doodle-doo");
+			}
+		};
+		rooster.sing();
+		assertEquals("Cock-a-doodle-doo", outContent.toString());
+	}
 }
