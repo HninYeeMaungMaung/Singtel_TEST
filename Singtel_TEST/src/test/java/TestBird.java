@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.main.bird.Bird;
 import com.main.bird.Chicken;
 import com.main.bird.Duck;
+import com.main.bird.Parrot;
 
 public class TestBird {
 	// QA.1
@@ -88,6 +89,28 @@ public class TestBird {
 			}
 		};
 		rooster.sing();
+		assertEquals("Cock-a-doodle-doo", outContent.toString());
+	}
+
+	// QA.4
+	@Test
+	public void testParrotSing() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Parrot parrot = new Parrot("cat");
+		parrot.sing();
+		assertEquals("Meow", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		parrot = new Parrot("dog");
+		parrot.sing();
+		assertEquals("Woof, woof", outContent.toString());
+
+		outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		parrot = new Parrot("rooster");
+		parrot.sing();
 		assertEquals("Cock-a-doodle-doo", outContent.toString());
 	}
 }
