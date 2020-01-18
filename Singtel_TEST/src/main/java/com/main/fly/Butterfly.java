@@ -34,4 +34,9 @@ public class Butterfly extends VolantAnimal {
 		}
 
 	}
+	
+	@Override
+	public String toString() {
+		return "Butterfly : can fly";
+	}	
 }

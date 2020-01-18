@@ -18,4 +18,9 @@ public class Clownfish extends Fish implements FishSpecialization{
 		System.out.print("I like to make jokes");		
 	}
 
+	@Override
+	public String toString() {
+		return "Clownfish :  small and colourful ";
+	}	
+
 }

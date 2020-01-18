@@ -12,4 +12,8 @@ import com.main.AquaticAnimal;
  */
 public class Fish extends AquaticAnimal {
 
+	@Override
+	public String toString() {
+		return "Fish : can swim";
+	}	
 }

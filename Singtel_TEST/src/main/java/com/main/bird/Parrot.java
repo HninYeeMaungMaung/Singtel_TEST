@@ -33,4 +33,9 @@ public class Parrot extends Bird {
 			break;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Parrot : can sing and fly";
+	}	
 }

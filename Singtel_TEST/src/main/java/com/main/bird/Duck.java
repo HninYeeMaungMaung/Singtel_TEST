@@ -11,5 +11,9 @@ public class Duck extends Bird {
 	public void swim() {
 		System.out.print("I am swiming");		
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Duck : can swim and sing";
+	}	
 }

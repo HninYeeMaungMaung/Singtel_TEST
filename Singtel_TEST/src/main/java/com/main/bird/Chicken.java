@@ -12,5 +12,10 @@ public class Chicken extends Bird {
 	public void fly() {
 		 throw new UnsupportedOperationException();
 	}
+
+	@Override
+	public String toString() {
+		return "Chicken : can sing";
+	}	
 	
 }

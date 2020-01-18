@@ -18,4 +18,8 @@ public class Shark extends Fish implements FishSpecialization{
 		System.out.print("I like to eat other fish");
 	}
 
+	@Override
+	public String toString() {
+		return "Shark :  large and grey";
+	}	
 }
