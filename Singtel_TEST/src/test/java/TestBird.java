@@ -9,6 +9,7 @@ import com.main.bird.Bird;
 import com.main.bird.Chicken;
 import com.main.bird.Duck;
 import com.main.bird.Parrot;
+import com.main.bird.Rooster;
 
 public class TestBird {
 	// QA.1
@@ -112,5 +113,16 @@ public class TestBird {
 		parrot = new Parrot("rooster");
 		parrot.sing();
 		assertEquals("Cock-a-doodle-doo", outContent.toString());
+	}
+	
+	// Extra - 1
+	@Test
+	public void testRoosterSing() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Rooster rooster = new Rooster();
+		rooster.setSecondLanguage("Finnish");
+		rooster.sing();
+		assertEquals("kukko kiekuu", outContent.toString());
 	}
 }
