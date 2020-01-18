@@ -6,6 +6,7 @@ import java.io.PrintStream;
 import org.junit.Test;
 
 import com.main.fish.Clownfish;
+import com.main.fish.Dolphin;
 import com.main.fish.Fish;
 import com.main.fish.Shark;
 
@@ -73,5 +74,14 @@ public class TestFish {
 		clownfish.getSize();
 		assertEquals("I am so small", outContent.toString());
 	}
-		
+
+	// QB.3
+	@Test
+	public void testDolphin() {
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
+		Dolphin dolphin = new Dolphin();
+		dolphin.swim();
+		assertEquals("I am swiming", outContent.toString());
+	}
 }
